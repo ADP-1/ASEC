@@ -4,8 +4,9 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { KeyRound, Lock, ArrowDown, List, FileText } from 'lucide-react';
+import { KeyRound, Lock, ArrowDown, List, FileText, Shield } from 'lucide-react';
 import { Button } from '../components/ui/button';
+import { Linkedin, Github } from 'lucide-react';
 
 const Index = () => {
   return (
@@ -140,7 +141,60 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Footer */}
+      {/* About Section */}
+      <motion.section 
+        id="about"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="py-16 px-4 bg-zinc-900/20 border-t border-white/5"
+      >
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center space-y-6">
+            <div className="flex justify-center items-center">
+              <Shield className="h-8 w-8 mr-2" />
+              <h2 className="text-3xl font-bold text-gradient">
+                About ASEC++
+              </h2>
+            </div>
+            <p className="text-white/80 text-lg leading-relaxed max-w-3xl mx-auto">
+              Developed by Aditya Pandey<br />
+              ASEC++ is an open-source cybersecurity toolkit focused on 
+              providing enterprise-grade password generation and wordlist creation capabilities 
+              for penetration testers and security researchers.
+            </p>
+            <div className="flex justify-center space-x-6 mt-8">
+              <Button 
+                asChild
+                variant="ghost" 
+                size="sm"
+                className="text-white/80 hover:text-purple hover:bg-white/5"
+              >
+                <a href="https://github.com/adp-1" target="_blank" rel="noopener">
+                  <Github className="h-5 w-5 mr-2" />
+                  GitHub
+                </a>
+              </Button>
+              <Button 
+                asChild
+                variant="ghost"
+                size="sm"
+                className="text-white/80 hover:text-purple hover:bg-white/5"
+              >
+                <a href="https://www.linkedin.com/in/adhax" target="_blank" rel="noopener">
+                  <Linkedin className="h-5 w-5 mr-2" />
+                  LinkedIn
+                </a>
+              </Button>
+            </div>
+            <p className="mt-8 text-white/40 text-sm font-mono">
+              Version 1.0.0
+            </p>
+          </div>
+        </div>
+      </motion.section>
+
       <Footer />
     </div>
   );

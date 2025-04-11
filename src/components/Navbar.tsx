@@ -31,7 +31,13 @@ const Navbar: React.FC = () => {
         <nav className="hidden md:flex items-center space-x-6">
           <Link to="/password-generator" className="text-white/80 hover-effect text-sm tracking-wide">Password Generator</Link>
           <Link to="/wordlist-generator" className="text-white/80 hover-effect text-sm tracking-wide">Wordlist Generator</Link>
-          {/* Removed Login link and Get Started button */}
+          <Button 
+            variant="outline" 
+            className="bg-zinc-800/50 text-white border-white/10 hover:bg-white/10"
+            onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+          >
+            About
+          </Button>
         </nav>
 
         {/* Mobile Navigation Toggle */}
@@ -76,12 +82,12 @@ const Navbar: React.FC = () => {
             <Button 
               variant="outline" 
               className="bg-zinc-800/50 text-white border-white/10 hover:bg-white/10 w-full"
-              onClick={() => setIsMenuOpen(false)}
-              asChild
+              onClick={() => {
+                setIsMenuOpen(false);
+                document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
-              <Link to="/">
-                Get Started
-              </Link>
+              About
             </Button>
           </div>
         </motion.div>
