@@ -1,10 +1,9 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { KeyRound, Lock, ArrowDown, List, FileText, Shield } from 'lucide-react';
+import { KeyRound, Lock, ArrowDown, List, FileText } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Linkedin, Github } from 'lucide-react';
 
@@ -12,13 +11,13 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center pt-16 pb-8 px-4 relative">
         <div className="absolute inset-0 overflow-hidden z-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(150,126,245,0.15),rgba(0,0,0,0)_50%)]"></div>
         </div>
-        
+
         <div className="container mx-auto text-center z-10">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -61,7 +60,7 @@ const Index = () => {
               </Button>
             </div>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -78,7 +77,7 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
-      
+
       {/* Features Section */}
       <section id="features" className="py-16 px-4 bg-zinc-900/50">
         <div className="container mx-auto">
@@ -94,7 +93,7 @@ const Index = () => {
               ASEC++ provides comprehensive security tools designed for cybersecurity professionals and enthusiasts
             </p>
           </motion.div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -116,7 +115,7 @@ const Index = () => {
                 </Link>
               </Button>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -140,7 +139,7 @@ const Index = () => {
           </div>
         </div>
       </section>
-      
+
       {/* About Section */}
       <motion.section 
         id="about"
@@ -153,7 +152,11 @@ const Index = () => {
         <div className="container mx-auto max-w-4xl">
           <div className="text-center space-y-6">
             <div className="flex justify-center items-center">
-              <Shield className="h-8 w-8 mr-2" />
+              <img
+                src="/images/asec-logo.svg"
+                className="h-8 w-8 mr-2"
+                alt="ASEC++ Logo"
+              />
               <h2 className="text-3xl font-bold text-gradient">
                 About ASEC++
               </h2>

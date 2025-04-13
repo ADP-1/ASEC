@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Menu, X, Shield } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
 import { Github, ArrowRight } from 'lucide-react';
 
@@ -19,7 +19,11 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
 
         <Link to="/" className="flex items-center">
-          <Shield className="h-8 w-8 text-white mr-2" />
+          <img 
+            src="/images/asec-logo.svg" 
+            className="h-8 w-8 mr-2"
+            alt="ASEC++ Logo"
+          />
           <h1 className="text-white font-bold text-xl tracking-tighter">ASEC++</h1>
         </Link>
 
