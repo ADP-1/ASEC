@@ -29,6 +29,20 @@ const Navbar: React.FC = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-right space-x-6">
+          <Link 
+              to="/password-generator" 
+              className="text-white/80 hover-effect py-2 text-sm tracking-wide"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Password Generator
+          </Link>
+          <Link 
+              to="/wordlist-generator" 
+              className="text-white/80 hover-effect py-2 text-sm tracking-wide"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Wordlist Generator
+          </Link>          
           <Button 
             variant="ghost"
             className="text-white/80 hover:bg-white/5"
@@ -84,13 +98,20 @@ const Navbar: React.FC = () => {
             >
               Wordlist Generator
             </Link>
-            <Link 
-              to="/auth" 
-              className="text-white/80 hover-effect py-2 text-sm tracking-wide"
-              onClick={() => setIsMenuOpen(false)}
+            <Button 
+            variant="ghost"
+            className="text-white/80 hover:bg-white/5"
+            asChild
+          >
+            <a 
+              href="https://github.com/adp-1/asec" 
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Login
-            </Link>
+              <Github className="h-4 w-4 mr-2" />
+              GitHub Repo <ArrowRight className="h-4 w-4 ml-2 -rotate-45" />
+            </a>
+          </Button>
             <Button 
               variant="outline" 
               className="bg-zinc-800/50 text-white border-white/10 hover:bg-white/10 w-full"
