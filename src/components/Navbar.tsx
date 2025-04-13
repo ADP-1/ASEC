@@ -2,8 +2,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Shield } from 'lucide-react';
 import { Button } from './ui/button';
+import { Github, ArrowRight } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,21 +17,28 @@ const Navbar: React.FC = () => {
       className="fixed top-0 left-0 right-0 z-50 glass border-b border-white/5"
     >
       <div className="container mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
-        <Link to="/" className="flex items-center space-x-2">
-          <motion.div 
-            className="h-8 w-8 rounded-md bg-purple flex items-center justify-center"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span className="text-white font-bold text-lg">A++</span>
-          </motion.div>
+
+        <Link to="/" className="flex items-center">
+          <Shield className="h-8 w-8 text-white mr-2" />
           <h1 className="text-white font-bold text-xl tracking-tighter">ASEC++</h1>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
-          <Link to="/password-generator" className="text-white/80 hover-effect text-sm tracking-wide">Password Generator</Link>
-          <Link to="/wordlist-generator" className="text-white/80 hover-effect text-sm tracking-wide">Wordlist Generator</Link>
+        <nav className="hidden md:flex items-right space-x-6">
+          <Button 
+            variant="ghost"
+            className="text-white/80 hover:bg-white/5"
+            asChild
+          >
+            <a 
+              href="https://github.com/adp-1/asec" 
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github className="h-4 w-4 mr-2" />
+              GitHub Repo <ArrowRight className="h-4 w-4 ml-2 -rotate-45" />
+            </a>
+          </Button>
           <Button 
             variant="outline" 
             className="bg-zinc-800/50 text-white border-white/10 hover:bg-white/10"

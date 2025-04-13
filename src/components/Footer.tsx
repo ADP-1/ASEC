@@ -13,11 +13,9 @@ const Footer: React.FC = () => {
     >
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between">
-          <div className="flex items-center mb-4 md:mb-0">
-            <div className="h-8 w-8 rounded-md bg-purple flex items-center justify-center">
-              <Shield className="h-4 w-4 text-white" />
-            </div>
-            <h2 className="text-white font-bold text-xl ml-2 tracking-tighter">ASEC++</h2>
+          <div className="flex items-center mb-4 md:mb-0 justify-start">
+            <Shield className="h-8 w-8 text-white mr-2" />
+            <h2 className="text-white font-bold text-xl tracking-tighter">ASEC++</h2>
           </div>
           
           <div className="flex flex-col items-center md:items-end">
